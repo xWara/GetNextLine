@@ -6,7 +6,7 @@
 /*   By: tharrive <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 13:39:24 by tharrive          #+#    #+#             */
-/*   Updated: 2017/11/15 13:24:14 by tharrive         ###   ########.fr       */
+/*   Updated: 2018/01/11 16:07:14 by tharrive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 void	ft_putendl(char const *s)
 {
-	ft_putstr(s);
-	ft_putchar('\n');
+	if (s == NULL)
+		ft_putstr("(null)\n");
+	else
+	{
+		ft_putstr(s);
+		ft_putchar('\n');
+	}
 }
