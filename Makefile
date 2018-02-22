@@ -6,7 +6,7 @@
 #    By: tharrive <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/24 17:42:58 by tharrive          #+#    #+#              #
-#    Updated: 2018/01/10 11:24:45 by tharrive         ###   ########.fr        #
+#    Updated: 2018/02/22 15:03:11 by tharrive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ HDRS = get_next_line.h \
 
 OBJS = $(SRCS:.c=.o)
 
-CFLAGS ?= -Wall -Werror -Wextra -Ilibft/
-LDFLAGS ?= -L libft/ -lft
+CFLAGS ?= -O3 -Wall -Werror -Wextra -Ilibft/
+LDFLAGS ?= -O3 -L libft/ -lft
 
 %.o: %.c $(HDRS)
 	@$(CC) $(CFLAGS) -c -o $@ $<
@@ -30,7 +30,7 @@ libft/libft.a:
 	$(MAKE) -C libft/
 
 $(NAME): libft/libft.a $(OBJS)
-	@$(CC) -o $(NAME) $(OBJS) $(LDFLAGS)
+	@$(CC) -o $(NAME) $(OBJS) $(CFLAGS) $(LDFLAGS)
 
 clean:
 	$(MAKE) -C libft/ clean
